@@ -1,0 +1,14 @@
+
+<view class="trans-container">
+  <view wx:for="{{trans}}" wx:key="index">
+    <view bindtap="navigaTran" data-index="{{index}}" class="tran-wrapper">
+      <view class="tran-content">
+        <view>团购名称:</view>
+        <view class="tran-name">{{item.recordName}}</view>
+        <view class="status">订单进程：{{item.trans.length-item.pending}}/{{item.trans.length}}</view>
+        <view class="status">上传日期：{{item.uploadDate}}</view>
+      </view>
+      <image src="../../images/arrow.png" class="setting-arrow"/>
+    </view>
+  </view>
+</view>

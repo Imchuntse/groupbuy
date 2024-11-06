@@ -1,0 +1,15 @@
+/* components/userCard/userCard.wxss */
+.user-wrapper{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.user-img{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.user-nickName{
+  font-size: 32rpx;
+}

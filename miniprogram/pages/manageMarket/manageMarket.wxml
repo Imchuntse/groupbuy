@@ -1,0 +1,57 @@
+<view class="container">
+
+  <view class="title">管理团购门店</view>
+  <view class="naviga-chooseMarket-wrapper" bind:tap="navigaChooseMarket">
+    <view class="chooseMarket">当前门店：{{ marketInfo ? marketInfo.name : "无"}}</view>
+    <image src="../../images/arrow.png" class="icon"/>
+  </view>
+  <view wx:if="{{marketInfo}}">
+    <view class="section-title">创建人：</view>
+    <userCard avatarUrl="{{ownerInfo[0].avatarUrl}}" nickName="{{ownerInfo[0].nickName}}"/>
+    <view class="section-title">管理员：</view>
+    <userList users="{{adminsInfo}}" userType="{{userType}}" bind:modifyStaff="modifyAdmin"/>
+    <view class="section-title">成员：</view>
+    <userList users="{{staffsInfo}}" userType="{{userType}}" bind:modifyStaff="modifyStaff"/>
+  </view>
+  <view wx:else class="alert">请先选择门店</view>
+  <button wx:if="{{userType == 0}}" type="primary" class="button" bind:tap="handleAddUser">添加成员</button>
+  <button wx:if="{{userType!=0 && marketInfo}}" type="warn" class="button" bind:tap="handleQuitMarket">退出门店</button>
+</view>
+<!--pages/manageMarket/manageMarket.wxml
+
+<wxs src="../../utils/filter.wxs" module="utils"/>
+
+<picker mode="selector" range="{{markets}}" bindchange="handleMarketChange" range-key="name" value="{{selectedMarket}}">
+    <view class="picker">
+      <view class="picker-text">当前门店：{{markets[selectedMarket].name}}</view> 
+      <image src="../../images/angle-down.png" class="picker-icon"/>
+    </view>
+  </picker>
+<view class="subtitle">创建人：</view>
+  <user-card avatarUrl="{{utils.getOwnerAvatar(markets[selectedMarket].staffsInfo,markets[selectedMarket].owner)|| ''}}" nickName="{{utils.getOwnerNickname(markets[selectedMarket].staffsInfo,markets[selectedMarket].owner)|| ''}}" />
+
+
+<view class="subtitle">管理员：</view>
+<view wx:if="{{utils.checkCommon(markets[selectedMarket].staffs,markets[selectedMarket].admin)}}" class="tip">暂无管理员</view>
+  <view wx:for="{{markets[selectedMarket].staffsInfo}}" wx:key="index" >
+    <view wx:if="{{utils.includes(markets[selectedMarket].admin,item._id)}}" class="userlist-container">
+     <user-card avatarUrl="{{item.avatarUrl || ''}}" nickName="{{item.nickName|| ''}}"/>
+     <image hidden="{{!usertype==0}}" src="../../images/arrow.png" 
+        class="close-icon" bind:tap="handleMangeAdmin" data-index="{{index}}"/>
+    </view>
+  </view>
+
+
+<view class="subtitle">成员列表：</view>
+<view wx:if="{{!utils.checkStaffNum(markets[selectedMarket].staffs,markets[selectedMarket].admin)}}" class="tip">暂无成员</view>
+<view wx:for="{{markets[selectedMarket].staffsInfo}}" wx:key="index" >
+  <view wx:if="{{!utils.includes(markets[selectedMarket].admin,item._id) && markets[selectedMarket].owner != item._id}}" class="userlist-container">
+    <user-card avatarUrl="{{item.avatarUrl|| ''}}" nickName="{{item.nickName|| ''}}" />
+    <image hidden="{{!usertype==0}}" src="../../images/arrow.png" 
+        class="close-icon" bind:tap="handleMangeStaff" data-index="{{index}}"/>
+  </view>
+</view>
+
+<button wx:if="{{usertype == 0}}" type="primary" class="add-button" bind:tap="handleAddUser">添加成员</button>
+<button wx:else class="quite-button" bind:tap="quitMarket">退出门店</button>
+-->

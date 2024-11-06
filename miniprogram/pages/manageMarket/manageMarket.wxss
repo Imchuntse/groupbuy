@@ -1,0 +1,15 @@
+.naviga-chooseMarket-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section-title{
+  margin: 20rpx 0;
+}
+.chooseMarket{
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  padding-bottom: 20rpx;
+}
+.button{
+  margin: 20rpx 0;
+}

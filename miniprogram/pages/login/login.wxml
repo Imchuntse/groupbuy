@@ -1,0 +1,23 @@
+<view class="userinfo">
+  <block wx:if="{{canIUseNicknameComp && !userInfo}}">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{newUser.avatarUrl}}"></image>
+    </button>
+    <view class="nickname-wrapper">
+      <text class="nickname-label">昵称</text>
+      <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
+    </view>
+    <button class="login-button" type="primary" bind:tap="handleReg">注册并登录</button>
+  </block>
+  <block wx:if="{{userInfo}}">
+    <view class="avatar-wrapper">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="nickname-wrapper">
+      <text class="nickname-label">昵称</text>
+      <view class="nickname-input">{{userInfo.nickName}}</view>
+    </view>
+    <button class="login-button" type="primary" bind:tap="handleLogin">登录</button>
+    
+  </block>
+</view>

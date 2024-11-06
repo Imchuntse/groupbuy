@@ -1,0 +1,54 @@
+/* components/tranDetail/tranDetail.wxss */
+.brief-wrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx;
+  border: 5rpx solid rgba(128, 128, 128, 0.3);
+  border-radius: 14rpx;
+}
+.user-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 10rpx;
+}
+.user-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+}
+.items-wrapper{
+  margin: 10rpx 0;
+}
+.items-text{
+  display: flex;
+  justify-content: space-between;
+  margin: 20rpx 0;
+}
+.items-price{
+  text-align: end;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10rpx 0;
+}
+.pick-button {
+  background-color: #4CAF50; /* 按钮背景色 */
+  border: 1px solid #4CAF50; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}
+.picked-button {
+  background-color: #FA5454; /* 按钮背景色 */
+  border: 1px solid #FA5454; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tranDetailList": "/components/tranDetailList/tranDetailList"
+  }
+}

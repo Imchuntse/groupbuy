@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "userList": "/components/userList/userList",
+    "userCard": "/components/userCard/userCard"
+  },
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,43 @@
+<!--pages/account/account.wxml-->
+<view>
+  <view wx:if="{{!userInfo}}" class="user-container" bind:tap="handleRequireLogin">
+    <image src="{{defaultAvatarUrl}}" class="userIcon"/>
+    <view class="nickname">请登录使用团购助手</view>
+  </view>
+  <view wx:else class="user-container">
+    <image src="{{userInfo.avatarUrl}}"class="userIcon"/>
+    <view class="nickname">{{userInfo.nickName}}</view>
+  </view>
+  <view wx:if="{{!userInfo}}" class="setting-container" bind:tap="handleRequireLogin">
+    <view class="setting-row">
+        <view >管理团购门店</view>
+        <image src="../../images/arrow.png" class="icon"/>
+      </view>
+      <view class="setting-row">
+        <view >新增团购门店</view>
+        <image src="../../images/arrow.png" class="icon"/>
+      </view>
+      <view class="setting-row">
+        <view >更改个人信息</view>
+        <image src="../../images/arrow.png" class="icon"/>
+      </view>
+  </view>
+  <view wx:else class="setting-container">
+    <view class="setting-row" bind:tap="navigaManageMarket">
+      <view >管理团购门店</view>
+      <image src="../../images/arrow.png" class="icon"/>
+    </view>
+    <view class="setting-row" bind:tap="navigaCreateMarket">
+      <view >新增团购门店</view>
+      <image src="../../images/arrow.png" class="icon"/>
+    </view>
+    <view class="setting-row" bind:tap="navigaModifyUserInfo">
+      <view >更改个人信息</view>
+      <image src="../../images/arrow.png" class="icon"/>
+    </view>
+  </view>
+  <view class="function-row-first" bind:tap="handleCopy">复制邀请码</view>
+  <!-- <view wx:if="{{userInfo}}" class="function-row-first" bind:tap="handleCopy">复制邀请码</view>
+  <view wx:else class="function-row-first" bind:tap="handleRequireLogin">复制邀请码</view> -->
+  <view wx:if="{{userInfo}}" class="function-row" bind:tap="handleSignout">取消登录</view>
+</view>

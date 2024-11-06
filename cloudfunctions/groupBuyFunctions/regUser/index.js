@@ -1,0 +1,40 @@
+const cloud = require('wx-server-sdk');
+cloud.init({
+  env: "groupbuy-0gh3qh0b8616931f"
+})
+exports.main = async (event, context) => {
+  const db = cloud.database()
+  const {fileID,nickName} = event
+  try{
+    const wxContext = await cloud.getWXContext()
+    const res = await db.collection("users").add({
+      data:{
+        _openid: wxContext.OPENID,
+        fileID: fileID,
+        nickName: nickName,
+        markets:[]
+      }
+    })
+
+    const userRes = await db.collection("users").where({
+      _id: res._id
+    }).get()
+    const user = userRes.data[0]
+    const avatarUrl = await cloud.getTempFileURL({
+      fileList: [user.fileID]
+    })
+    user.avatarUrl = avatarUrl.fileList[0].tempFileURL
+    return {
+      errorCode: 0,
+      user: user
+    }
+  }catch(err){
+    return{
+      errorCode: -1,
+      errorMessage: err.message
+    }
+  }
+
+
+
+};

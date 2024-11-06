@@ -1,0 +1,40 @@
+/* pages/account/account.wxss */
+.user-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 20rpx solid rgba(128, 128, 128, 0.2);
+  margin-top: 50rpx;
+}
+.userIcon{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 20rpx;
+}
+.nickname{
+  font-size: x-large;
+  margin-bottom: 20rpx;
+}
+
+.setting-row{
+  padding: 50rpx 15rpx;
+  font-size: 32rpx;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.function-row{
+  padding: 30rpx 15rpx;
+  text-align: center;
+  border-bottom: 20rpx solid rgba(128, 128, 128, 0.1);
+}
+.function-row-first{
+  padding: 30rpx 15rpx;
+  text-align: center;
+  border-top: 20rpx solid rgba(128, 128, 128, 0.1);
+  border-bottom: 20rpx solid rgba(128, 128, 128, 0.1);
+}

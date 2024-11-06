@@ -1,0 +1,58 @@
+/**app.wxss**/
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding-bottom: 20px; 
+}
+
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.container{
+  margin: 10rpx 20rpx;
+}
+.title{
+  margin: 20rpx 0;
+  display: flex;
+  justify-content: center;
+  font-size: 42rpx;
+  font-weight: bold;
+
+}
+.alert{
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.8);
+}
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10rpx 0;
+}
+.pick-button {
+  background-color: #4CAF50; /* 按钮背景色 */
+  border: 1px solid #4CAF50; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}

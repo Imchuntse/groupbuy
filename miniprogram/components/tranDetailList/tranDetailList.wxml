@@ -1,0 +1,24 @@
+<!--components/tranDetail/tranDetail.wxml-->
+<view wx:for="{{trans}}" wx:key="index" class="brief-wrapper">
+  <view class="user-container" bind:tap="navigaCustDetail" data-index="{{index}}">
+    <view class="user-wrapper">
+      <view>{{item.level}}  {{item.name}}</view>
+      <view>联系人：{{item.contactName}}  {{item.contactNum}}</view>
+    </view>
+    <image src="../../images/arrow.png" class="icon"/>
+  </view>
+
+  <view class="items-text">
+    <view>总价：{{item.totalPrice}}</view>
+    <view wx:if="{{item.collect}}" style="color: gray;">已领取</view>
+    <view wx:else style="color: red;">未领取</view>
+  </view>
+  <view wx:for="{{item.shopedItems}}" wx:key="itemsIndex" class="items-wrapper">
+    <view>{{item.itemName}}</view>
+    <view class="items-price">{{item.price}} x {{item.qty}} {{item.unit}}</view>
+  </view>
+  <view class="button-wrapper">
+    <view wx:if="{{!item.collect}}" class="pick-button" bind:tap="handlePick" data-index="{{index}}" data-status="pick">取走</view> 
+    <view wx:if="{{item.collect && userType != 2}}" class="picked-button" bind:tap="handlePick" data-index="{{index}}" data-status="picked">撤销</view> 
+  </view>
+</view>

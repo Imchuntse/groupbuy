@@ -1,0 +1,47 @@
+<!--pages/tranDetail/tranDetail.wxml-->
+<view class="container">
+  <view class="title-wrapper">
+    <view>团购主题</view>
+    <view>{{tran.recordName}}</view>
+  </view>
+
+  <view class="title-wrapper">
+    <view>创建时间：{{tran.createDate}}</view>
+    <view>上传时间：{{tran.uploadDate}}</view>
+  </view>
+
+  <view class="brief-title-container" bind:tap="toggleBrief">
+    <view>团购汇总</view>
+    <image wx:if="{{!showBrief}}" src="../../images/angle-down.png" class="icon"/>
+    <image wx:else src="../../images/angle-up.png" class="icon"/>
+  </view>
+  <view wx:if="{{showBrief}}">
+    <view wx:for="{{tran.brief}}" wx:key="index" class="brief-wrapper">
+      <view>商品：{{item.name}}</view>
+      <view>单价：{{item.price}}</view>
+      <view>数量：{{item.qty}}</view>
+      <view>数量单位：{{item.unit}}</view>
+    </view>
+  </view>
+  <view>
+    <view class="title">订单信息</view>
+    <view class="brief-title-container" bind:tap="togglePending">
+      <view>未领取</view>
+      <image wx:if="{{!showPending}}" src="../../images/angle-down.png" class="icon"/>
+      <image wx:else src="../../images/angle-up.png" class="icon"/>
+    </view>
+    <view wx:if="{{showPending}}">
+      <tranDetailList trans="{{pendingTran}}" bind:navigaCustDetail='handlePendingNavigaCustDetail' bind:handlePick='handlePick' wx:if="{{pendingTran}}"/>
+    </view>
+    <view class="brief-title-container" bind:tap="togglePicked">
+      <view>已领取</view>
+      <image wx:if="{{!showPicked}}" src="../../images/angle-down.png" class="icon"/>
+      <image wx:else src="../../images/angle-up.png" class="icon"/>
+    </view>
+    <view wx:if="{{showPicked}}">
+      <tranDetailList trans="{{pickedTran}}" bind:navigaCustDetail='handlePickNavigaCustDetail' bind:handlePick='handlePick' wx:if="{{pickedTran}}" userType="{{userType}}"/>
+    </view>
+  </view>
+
+  <button type="warn" bind:tap="deleteTran" style="margin-bottom: 30rpx; margin-top: 30rpx;" wx:if="{{userType!=2}}">删除订单</button>
+</view>

@@ -1,0 +1,8 @@
+<!--pages/chooseMarket/chooseMarket.wxml-->
+<text class="title">请选择门店</text>
+<view wx:if="{{markets.length == 0}}" class="alert">暂无可以选择的门店</view>
+<view wx:else>
+  <view wx:for="{{markets}}" wx:key="index" class="market" bind:tap="handleSetMarket" data-index="{{index}}">
+    <view>{{item.name}}</view>
+  </view>
+</view>

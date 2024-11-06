@@ -1,0 +1,19 @@
+/* pages/customerDetail/customerDetail.wxss */
+
+.cust-container{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10rpx;
+}
+.custnum{
+  margin-left: 30rpx;
+  color: #1BA3ED;
+}
+
+.brief-title-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 5rpx solid rgba(128, 128, 128, 0.1);
+}

@@ -1,0 +1,45 @@
+/* components/custTranList/custTranList.wxss */
+.shopedItem-wrapper{
+  display: flex;
+  flex-direction: column;
+  margin: 10rpx 0;
+  padding: 10rpx;
+  border: 5rpx solid rgba(128, 128, 128, 0.3);
+  border-radius: 14rpx;
+}
+.tran-name-wrapper{
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  padding-bottom: 10rpx;
+}
+.tran-info-wrapper{
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10rpx 0;
+}
+.items-price{
+  text-align: end;
+}
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10rpx 0;
+}
+.pick-button {
+  background-color: #4CAF50; /* 按钮背景色 */
+  border: 1px solid #4CAF50; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}
+.picked-button {
+  background-color: #FA5454; /* 按钮背景色 */
+  border: 1px solid #FA5454; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}

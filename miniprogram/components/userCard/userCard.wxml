@@ -1,0 +1,5 @@
+<!--components/userCard/userCard.wxml-->
+<view class="user-wrapper">
+  <image src="{{avatarUrl}}" class="user-img"/>
+  <view class="user-nickname">{{nickName}}</view>
+</view>

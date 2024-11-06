@@ -1,0 +1,30 @@
+<!--pages/customerDetail/customerDetail.wxml-->
+<view class="container">
+  <view>微信名：{{customer.name}}</view>
+  <view class="cust-container">
+    <view>联系人：{{customer.contactName}}</view>
+    <text class="custnum" user-select="true">{{customer.contactNum}}</text>
+  </view>
+  <view class="title">团购订单：</view>
+  <view style="color:lightgray; text-align: end;">仅显示30天内订单</view>
+  <view wx:if="{{trans.length>0}}">
+    <view class="brief-title-container" bind:tap="togglePending">
+      <view>未领取</view>
+      <image wx:if="{{!showPending}}" src="../../images/angle-down.png" class="icon"/>
+      <image wx:else src="../../images/angle-up.png" class="icon"/>
+    </view>
+    <view wx:if="{{showPending}}">
+      <custTranList trans='{{pendingTran}}' bind:handlePick="handlePick"/>
+    </view>
+    <view class="brief-title-container" bind:tap="togglePicked">
+      <view>已领取</view>
+      <image wx:if="{{!showPicked}}" src="../../images/angle-down.png" class="icon"/>
+      <image wx:else src="../../images/angle-up.png" class="icon"/>
+    </view>
+    <view wx:if="{{showPicked}}">
+      <custTranList trans='{{pickedTran}}' userType="{{userType}}" bind:handlePick="handlePick"/>
+    </view>
+  </view>
+  <view wx:else class="alert">该用户没有订单消息</view>
+</view>
+

@@ -1,0 +1,22 @@
+<view wx:if="{{users.length > 0}}">
+  <view wx:for="{{users}}" wx:key="index">
+    <view 
+      class="user-container" 
+      bind:tap="handleTap" 
+      data-index="{{index}}">
+      <view class="user-wrapper">
+        <image src="{{item.avatarUrl}}" class="user-img" />
+        <view class="user-nickname">{{item.nickName}}</view>
+      </view>
+      <image 
+        src="../../images/arrow.png" 
+        class="icon" 
+        wx:if="{{userType == 0 && icon == 0}}" />
+      <image 
+      src="../../images/cross-small.png" 
+      class="icon" 
+      wx:if="{{userType == 0 && icon == 1}}" bind:tap="handleIconTap" data-index="{{index}}"/>
+    </view>
+  </view>
+</view>
+<view wx:else class="alert">暂无成员</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "groupBuyTrans": "/components/groupBuyTrans/groupBuyTrans"
+  },
+  "enablePullDownRefresh": false
+}

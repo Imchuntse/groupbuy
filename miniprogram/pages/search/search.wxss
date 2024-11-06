@@ -1,0 +1,71 @@
+/* pages/search/search.wxss */
+.container{
+  margin: 10rpx 20rpx;
+}
+.search-tran-wrapper{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 10rpx;
+  padding: 10rpx;
+  border: 2rpx solid rgba(128, 128, 128, 0.1);
+  border-radius: 15rpx;
+  color: #676767;
+  background-color: #EDEDED;
+  justify-content: space-between;
+}
+.close-icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.input{
+  flex: 1;
+}
+.search-option-title{
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  padding-bottom: 10rpx;
+}
+.search-option-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+.search-button-selected {
+  background-color: #4CAF50; /* 按钮背景色 */
+  border: 1px solid #4CAF50; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}
+.search-button {
+  background-color: gray; /* 按钮背景色 */
+  border: 1px solid gray; /* 按钮边框 */
+  color: white; /* 按钮字体颜色 */
+  padding: 10rpx 20rpx; /* 按钮内边距 */
+  border-radius: 14rpx; /* 按钮圆角 */
+}
+.cust-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  margin-top: 10rpx;
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.cust-contact-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.custnum{
+  margin-left: 30rpx;
+  color: #1BA3ED;
+}
+.search-result-container{
+  margin-top: 20rpx;
+}

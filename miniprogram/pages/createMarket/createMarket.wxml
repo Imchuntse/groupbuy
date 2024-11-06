@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="title">新增团购门店</view>
+  <view class="subtitle">门店名字:</view>
+  <view class="content-container">
+    <input type="text" value="{{market.name}}" class="input" placeholder="请输入门店名字" bindinput="handleMarketNameInput" />
+    <image src="../../images/close.png" class="close-icon" bind:tap="handleMarketNameClear"/>
+  </view>
+  <view class="subtitle">成员邀请码:</view>
+  <view class="content-container">
+    <input type="text" class="input" placeholder="请输入成员邀请码" value="{{staffCode}}" bindinput="handleStaffCodeInput"/>
+    <image src="../../images/close.png" class="close-icon" bind:tap="handleStaffCodeClear"/>
+  </view>
+  <button type="primary" bind:tap="addUser">添加成员</button>
+  <view class="subtitle">成员列表:</view>
+  <userList users="{{market.staffs}}" userType="{{0}}" icon="{{1}}" bind:removeStaff="handleRemoveUser"/>
+
+  <view class="function-row" bind:tap="confirmAddMarket">添加门店</view>
+</view>

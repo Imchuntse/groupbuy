@@ -1,0 +1,13 @@
+<!--pages/modifyUserInfo/modifyUserInfo.wxml-->
+<view class="userinfo">
+  <block>
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl}}"></image>
+    </button>
+    <view class="nickname-wrapper">
+      <text class="nickname-label">昵称</text>
+      <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange"  value="{{nickName}}"/>
+    </view>
+    <button class="confirm-button" type="primary" bind:tap="handleChange">确定修改</button>
+  </block>
+</view>

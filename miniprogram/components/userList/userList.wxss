@@ -1,0 +1,34 @@
+
+.user-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  padding-bottom: 20rpx;
+  margin-top: 10rpx;
+}
+.user-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.user-img{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.user-nickName{
+  font-size: 32rpx;
+}
+.alert{
+  margin-top: 50rpx;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.8);
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}

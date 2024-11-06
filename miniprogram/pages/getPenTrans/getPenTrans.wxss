@@ -1,0 +1,19 @@
+/* pages/getPenTrans/getPenTrans.wxss */
+.tran-title-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  border-bottom: 5rpx solid rgba(128, 128, 128, 0.1);
+}
+.tran-title-wrapper{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-right: 20rpx;
+}
+.tran-title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

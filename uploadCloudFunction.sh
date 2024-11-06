@@ -1,0 +1,1 @@
+"/Applications/wechatwebdevtools.app/Contents/MacOS/cli" cloud functions deploy --e groupbuy-0gh3qh0b8616931f --n quickstartFunctions --r --project "/Users/ctse/Desktop/团购助手2" --report_first --report

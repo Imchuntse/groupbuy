@@ -1,0 +1,64 @@
+/* pages/market/market.wxss */
+
+.subtitle{
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 10rpx;
+}
+.content-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+  margin-bottom: 15rpx;
+}
+.input{
+  height: 50rpx;
+  padding: 10rpx;
+  flex: 1;
+}
+.close-icon{
+  height: 50rpx;
+  width: 50rpx;
+  padding-right: 10rpx;
+}
+.userlist-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+}
+.user-wrapper{
+  display: flex;
+  align-items: center;
+  margin: 12rpx;
+}
+.user-img{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.user-nickName{
+  font-size: 32rpx;
+}
+.tip{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100rpx;
+  font-size: 55rpx;
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.8);
+}
+
+.function-row{
+  margin-top: 100rpx;
+  font-size: 32rpx;
+  padding: 30rpx 15rpx;
+  text-align: center;
+  border-top: 20rpx solid rgba(128, 128, 128, 0.1);
+  border-bottom: 20rpx solid rgba(128, 128, 128, 0.1);
+}

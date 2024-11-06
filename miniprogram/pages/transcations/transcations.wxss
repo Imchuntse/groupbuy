@@ -1,0 +1,57 @@
+/* pages/transcations/transcations.wxss */
+.loginTip{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 55rpx;
+  font-weight: bold;
+  color: rgba(128, 128, 128, 0.8);
+}
+.title{
+  display: flex;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+.market-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10rpx 0;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+}
+.search-wrapper{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  padding: 10rpx;
+  border: 2rpx solid rgba(128, 128, 128, 0.1);
+  border-radius: 15rpx;
+  color: #676767;
+  background-color: #EDEDED;
+}
+
+.date-container{
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  font-size: large;
+  padding-bottom: 10rpx;
+  border-bottom: 2rpx solid rgba(128, 128, 128, 0.1);
+}
+.icon{
+  width: 40rpx;
+  height: 40rpx;
+}
+.button-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

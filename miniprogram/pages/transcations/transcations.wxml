@@ -1,0 +1,35 @@
+<!--pages/transcations/transcations.wxml-->
+<!-- <view wx:if="{{!userInfo}}" class="loginTip" bind:tap="handleRequireLogin">请登录使用团购助手</view> -->
+<view class="container">
+  <view class="market-wrapper" bind:tap="chooseMarket">
+    <view wx:if="{{marketInfo}}">当前门店: {{marketInfo.name}}</view>
+    <view wx:else>当前门店：无</view>
+    <image src="../../images/arrow.png" class="icon"/>
+  </view>
+  <view class="market-wrapper" bind:tap="navigaGetPenTrans">
+    <view>显示未领取订单</view>
+    <image src="../../images/arrow.png" class="icon"/>
+  </view>
+  <view class="search-wrapper" bind:tap="navigaSearch">
+    <image class="icon" src="../../images/search.png" />
+    <view style="margin-left: 20rpx;">搜索</view>
+  </view>
+  <view class="date-container">
+    <image src="../../images/calendar_2693507.png" class="icon"/>
+    <picker mode="date" disabled="{{!marketInfo}}" value="{{date}}" start="2024-01-01" end="2030-12-31" bindchange="bindDateChange">
+      <view class="picker">
+        订单日期：{{date}}
+      </view>
+    </picker>
+  </view>
+  <view class="title">团购订单信息</view>
+  <view class="button-wrapper">
+    <image src="../../images/add.png" class="icon" wx:if="{{userType!=2}}" bind:tap="chooseExcel" style="margin-right: 20rpx;"/>
+    <image src="../../images/refresh.png" class="icon" bind:tap="refresh"/>
+  </view>
+  <view wx:if="{{!trans.length > 0 && marketInfo}}" class="alert">暂无{{date}}订单信息</view>
+  <view wx:if="{{!marketInfo && userInfo}}" class="alert">请先选择门店</view>
+  <view wx:if="{{!userInfo}}" class="alert" bind:tap="handleRequireLogin">请登录使用团购助手</view>
+  <view wx:if="{{!userInfo}}" style="color: rgba(128, 128, 128, 0.8);  text-align: center;">该软件仅提供给团购超市工作人员使用</view>
+  <groupBuyTrans trans="{{trans}}" bind:navigate="navigaTran"/>
+</view>

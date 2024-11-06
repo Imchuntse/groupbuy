@@ -1,0 +1,26 @@
+<!--pages/getPenTrans/getPenTrans.wxml-->
+<view class="container" wx:if="{{pendingTrans.length>0}}">
+  <view class="title">未领取订单</view>
+  <view style="color:lightgray; text-align: end;">仅显示30天内订单</view>
+  <view>
+    <view wx:for="{{pendingTrans}}" wx:key="index">
+      <view class="tran-title-container" bind:tap="toggleTrans" data-index="{{index}}">
+        <view class="tran-title-wrapper">
+          <view>{{item.recordName}}</view>
+          <view class="tran-title">
+            <view>上传日期：{{item.uploadDate}}</view>
+            <view>数量：{{item.pending}}</view>
+          </view>
+        </view>
+        
+        <image wx:if="{{selectedTransIndices[index]}}" src="../../images/angle-up.png" class="icon" />
+        <image wx:else src="../../images/angle-down.png" class="icon" />
+      </view>
+
+      <view wx:if="{{selectedTransIndices[index]}}">
+        <tranDetailList trans="{{item.trans}}" bind:navigaCustDetail="navigaCustDetail" bind:handlePick="handlePick" data-tranindex="{{index}}"/>
+      </view>
+    </view>
+  </view>
+</view>
+<view wx:else class="alert" style="margin-top: 500rpx;">该门店没有未领取订单信息</view>

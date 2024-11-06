@@ -1,0 +1,39 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+
+    <view class="search-tran-wrapper">
+
+      <input type="text" value="{{query}}" bind:input="handleSearchInput" focus="{{true}}" confirm-type="search" bindconfirm="handleSearch" wx:if="{{selectedType}}" placeholder="请输入客人昵称或者电话" class="input"/>
+
+      <input type="text" value="{{query}}" bind:input="handleSearchInput" focus="{{true}}" confirm-type="search" bindconfirm="handleSearch" wx:if="{{!selectedType}}" placeholder="请输入团购主题"/>
+      <image src="../../images/close.png" class="close-icon" bind:tap="handleClearQuery"/>
+    </view>
+    <view style="color:lightgray; text-align: end;">仅显示30天内订单</view>
+    <view class="search-option-title">搜索指定内容</view>
+    <view class="search-option-wrapper">
+      <view class="{{selectedType ? 'search-button-selected' : 'search-button'}}" bind:tap="selectCustType">用户</view>
+      <view class="{{selectedType  ? 'search-button' : 'search-button-selected'}}" bind:tap="selectTranType">团购</view>
+    </view>
+    <view style="margin-top: 20rpx; " class="search-option-title">搜索结果：</view>
+    <view wx:if="{{result.length>0}}">
+    <view class="search-result-container">
+      <groupBuyTrans wx:if="{{!selectedType}}" trans="{{result}}" bind:navigate="navigaTran"/>
+
+      <view wx:else>
+        <view wx:for="{{result}}" wx:key="index">
+          <view class="cust-container" bind:tap="navigaCust" data-index="{{index}}">
+            <view>
+              <view>微信名：{{item.name}}</view>
+              <view class="cust-contact-wrapper">
+                <view>联系人：{{item.contactName}}</view>
+                <text class="custnum" user-select="true">{{item.contactNum}}</text>
+              </view>
+            </view>
+            <image src="../../images/arrow.png" class="icon"/>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class="alert" style="margin-top: 40rpx;">空</view>
+</view>

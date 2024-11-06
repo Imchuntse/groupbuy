@@ -1,0 +1,29 @@
+<view>
+  <view wx:for="{{trans}}" wx:key="tranIndex" wx:for-item='tran' wx:for-index="tranIndex">
+    <view wx:for="{{tran.trans}}" wx:key="itemsIndex" wx:for-item='shopedItems' wx:for-index="itemsIndex">
+      <view class="shopedItem-wrapper">
+        <view class="tran-name-wrapper">
+          <view>{{tran.name}}</view>
+          <view>订单日期：{{tran.date}}</view>
+        </view>
+
+        <view class="tran-info-wrapper">
+          <view>总价：{{shopedItems.totalPrice}}</view>
+          <view>楼层：{{shopedItems.level}}</view>
+          <view wx:if="{{shopedItems.collect}}" style="color: gray;">已领取</view>
+          <view wx:else style="color: red;">未领取</view>
+        </view>
+
+        <view wx:for="{{shopedItems.shopedItems}}" wx:key="index" wx:for-index="index">
+          <view>{{item.itemName}}</view>
+          <view class="items-price">{{item.price}} x {{item.qty}} {{item.unit}}</view>
+        </view>
+        <view class="button-wrapper">
+            <view wx:if="{{!shopedItems.collect}}" class="pick-button" bind:tap="handlePick" data-tranindex="{{tranIndex}}" data-itemsindex="{{itemsIndex}}" data-status="pick">取走</view> 
+            <view wx:if="{{shopedItems.collect && userType != 2}}" class="picked-button" bind:tap="handlePick" data-tranindex="{{tranIndex}}" data-itemsindex="{{itemsIndex}}" data-status="picked">撤销</view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+</view>
